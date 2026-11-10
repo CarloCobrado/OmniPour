@@ -1,0 +1,56 @@
+@startuml
+skinparam roundcorner 10
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+
+skinparam rectangle {
+    BackgroundColor #fff2cc
+    BorderColor #d6b656
+    BorderThickness 1.5
+    FontColor #000000
+    FontStyle bold
+}
+
+skinparam component {
+    BackgroundColor #f8cecc
+    BorderColor #b85450
+    BorderThickness 2
+    FontColor #000000
+}
+
+' External Entities
+rectangle "System Administrator" as Admin
+rectangle "Cashier" as Cashier
+rectangle "Customer" as Customer
+rectangle "Supervisor" as Supervisor
+rectangle "Management" as Management
+rectangle "Stock Staff / Inventory" as Inventory
+
+' Central Process 0
+component [<b>0</b>\n<b>BEANTRACK</b>\nCentralized Coffee Shop POS, Inventory\n& Reporting Management System] as System
+
+' System Admin Flows
+Admin --> System : User accounts data & role permissions\nBackup & restore commands
+System --> Admin : System & user status confirmations\nDatabase backup archive (.sql)
+
+' Cashier Flows
+Cashier --> System : Order details & payment info
+System --> Cashier : Receipt, item lookup & pricing tiers
+
+' Customer Flows
+Customer --> System : Order details & cash/tender
+System --> Customer : Sales receipt & order fulfillment
+
+' Supervisor Flows
+Supervisor --> System : Audit & chain verify query, recipe setup
+System --> Supervisor : Audit trail, integrity status & summaries
+
+' Management Flows
+Management --> System : Report filter parameters & date criteria
+System --> Management : Dashboard metrics & multi-sheet Excel/CSV
+
+' Inventory Staff Flows
+Inventory --> System : Stock intake (P.O.), spoilage logs & recipes
+System --> Inventory : Low-stock alerts, inventory status & levels
+
+@enduml

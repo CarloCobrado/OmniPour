@@ -1,0 +1,393 @@
+<mxfile host="app.diagrams.net" agent="BeanTrack">
+  <diagram id="Figure4_SystemFlow" name="Proposed System Flow">
+    <mxGraphModel dx="1214" dy="1360" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1050" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=30;horizontal=0;horizontalStack=1;fillColor=#f8f9fa;fontColor=#212529;strokeColor=#dee2e6;fontStyle=1;fontSize=14;" value="BEANTRACK PROPOSED SYSTEM FLOW" vertex="1">
+          <mxGeometry height="1270" width="950" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_c" parent="pool" style="swimlane;html=1;startSize=30;fillColor=#fff5f5;strokeColor=#e0a899;fontStyle=1;fontSize=12;" value="Cashier" vertex="1">
+          <mxGeometry height="1270" width="190" x="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_start" parent="lane_c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="35" width="70" x="60" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="c_login" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Log in to BEANTRACK" vertex="1">
+          <mxGeometry height="40" width="130" x="30" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cust" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Select Customer Account" vertex="1">
+          <mxGeometry height="40" width="130" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_items" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Enter Products &amp; Quantities" vertex="1">
+          <mxGeometry height="40" width="130" x="30" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pay" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Select Payment Method (Cash, Online, Terms)" vertex="1">
+          <mxGeometry height="45" width="140" x="25" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_submit" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Submit &amp; Complete Order" vertex="1">
+          <mxGeometry height="40" width="130" x="30" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c_receipt" parent="lane_c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="View Order Confirmation &amp; Issue Receipt" vertex="1">
+          <mxGeometry height="45" width="140" x="25" y="547.5" as="geometry" />
+        </mxCell>
+        <mxCell id="c_end" parent="lane_c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="End" vertex="1">
+          <mxGeometry height="35" width="70" x="60" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_s" parent="pool" style="swimlane;html=1;startSize=30;fillColor=#f8f9fa;strokeColor=#ced4da;fontStyle=1;fontSize=12;" value="BEANTRACK System &amp; Database" vertex="1">
+          <mxGeometry height="1270" width="220" x="220" as="geometry" />
+        </mxCell>
+        <mxCell id="s_tier" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Auto-Apply Customer Price Tier (SRP, Wholesale, Bulk, etc.)" vertex="1">
+          <mxGeometry height="45" width="150" x="35" y="157.5" as="geometry" />
+        </mxCell>
+        <mxCell id="s_calc" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Validate Stock &amp; Compute Order Subtotal" vertex="1">
+          <mxGeometry height="40" width="150" x="35" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="s_save" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Save Sales Order Record" vertex="1">
+          <mxGeometry height="40" width="140" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="s_compile_rep" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Compile Sales, Deliveries, Spoilage &amp; Stock" vertex="1">
+          <mxGeometry height="45" width="150" x="40" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="s_gen_excel" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Generate Multi-Sheet Client Excel (.xlsx)" vertex="1">
+          <mxGeometry height="40" width="150" x="40" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="s_dec_type" parent="lane_s" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="Item Type?" vertex="1">
+          <mxGeometry height="45" width="100" x="60" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="s_deduct_p" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" value="Deduct Packaged Stock" vertex="1">
+          <mxGeometry height="35" width="95" x="10" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="s_deduct_r" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" value="Deduct Raw Ingredients via Recipe BOM" vertex="1">
+          <mxGeometry height="35" width="95" x="115" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="s_audit" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Append SHA-256 Hash to Audit Ledger" vertex="1">
+          <mxGeometry height="40" width="150" x="35" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="lane_s" source="s_dec_type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=0;exitY=1;exitDx=0;exitDy=0;" target="s_deduct_p" value="Packaged">
+          <mxGeometry relative="1" x="0.5468" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="57.5" y="453.79999999999995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="lane_s" source="s_dec_type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="s_deduct_r" value="Recipe Drink">
+          <mxGeometry relative="1" x="0.3958" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="162.5" y="453.79999999999995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="lane_s" source="s_deduct_p" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="s_audit">
+          <mxGeometry relative="1" x="0.131" as="geometry">
+            <Array as="points">
+              <mxPoint x="57.5" y="530" />
+              <mxPoint x="100" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="lane_s" source="s_deduct_r" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="s_audit">
+          <mxGeometry relative="1" x="0.131" as="geometry">
+            <Array as="points">
+              <mxPoint x="162.5" y="530" />
+              <mxPoint x="120" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_flag_alert" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" value="Trigger Low/Out Stock Alert" vertex="1">
+          <mxGeometry height="35" width="95" x="10" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-7" parent="lane_s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" value="Maintain Normal In-Stock Status" vertex="1">
+          <mxGeometry height="35" width="95" x="115" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_i" parent="pool" style="swimlane;html=1;startSize=30;fillColor=#f0f7ff;strokeColor=none;fontStyle=1;fontSize=12;" value="Inventory Staff" vertex="1">
+          <mxGeometry height="1270" width="180" x="440" as="geometry" />
+        </mxCell>
+        <mxCell id="s_val_del" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Validate P.O. &amp; Increment Branch Stock" vertex="1">
+          <mxGeometry height="40" width="150" x="-185" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="s_val_spoil" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="Record Reason &amp; Deduct Spoiled Stock" vertex="1">
+          <mxGeometry height="40" width="150" x="-185" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="s_check_thresh" parent="lane_i" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=10;" value="Stock &lt;= Reorder Point?" vertex="1">
+          <mxGeometry height="45" width="130" x="-175" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="lane_i" source="s_val_spoil" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s_check_thresh">
+          <mxGeometry relative="1" x="-0.5" as="geometry">
+            <Array as="points">
+              <mxPoint x="-110" y="750" />
+              <mxPoint x="-110" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i_del" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Receive Shipment &amp; Enter P.O., Cases, Units" vertex="1">
+          <mxGeometry height="40" width="140" x="20" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="i_spoil" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Log Spoilage / Damage with Reason" vertex="1">
+          <mxGeometry height="40" width="140" x="20" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="i_view" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="View Updated Inventory &amp; Stock Alerts" vertex="1">
+          <mxGeometry height="40" width="140" x="20" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="i_end" parent="lane_i" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="End" vertex="1">
+          <mxGeometry height="35" width="70" x="55" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="lane_i" source="i_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="i_del">
+          <mxGeometry relative="1" x="-0.0667" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="640" />
+              <mxPoint x="90" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="lane_i" source="i_view" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="i_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-6" edge="1" parent="lane_i" source="i_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="i_spoil">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="617.5" />
+              <mxPoint x="170" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i_login" parent="lane_i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Log in to BEANTRACK" vertex="1">
+          <mxGeometry height="35" width="130" x="25" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="i_start" parent="lane_i" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="35" width="70" x="55" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="lane_i" source="i_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="i_login">
+          <mxGeometry relative="1" x="-0.5077" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="lane_i" source="i_del" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="s_val_del">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="lane_i" source="i_spoil" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="s_val_spoil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="lane_i" source="s_val_del" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="s_check_thresh">
+          <mxGeometry relative="1" x="0.5754" as="geometry">
+            <Array as="points">
+              <mxPoint x="-200" y="670" />
+              <mxPoint x="-200" y="792.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lane_sup" parent="pool" style="swimlane;html=1;startSize=30;fillColor=#f2faf4;strokeColor=#a8dab5;fontStyle=1;fontSize=12;" value="Supervisor" vertex="1">
+          <mxGeometry height="1270" width="180" x="620" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_start" parent="lane_sup" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="35" width="70" x="55" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_login" parent="lane_sup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Log in to BEANTRACK" vertex="1">
+          <mxGeometry height="35" width="130" x="25" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_rep" parent="lane_sup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Access Reports &amp; Select Parameters" vertex="1">
+          <mxGeometry height="45" width="130" x="25" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-20" edge="1" parent="lane_sup" source="sup_dec_export" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="FPqwXVikfXxkkeHYRNzL-16">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <Array as="points">
+              <mxPoint x="132.5" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-21" connectable="0" parent="FPqwXVikfXxkkeHYRNzL-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="No" vertex="1">
+          <mxGeometry relative="1" x="0.0805" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sup_dec_export" parent="lane_sup" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="Export Report?" vertex="1">
+          <mxGeometry height="40" width="100" x="40" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-15" parent="lane_sup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Download 8-Sheet Report (.xlsx)" vertex="1">
+          <mxGeometry height="45" width="75" x="10" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-16" parent="lane_sup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Review On-Screen Summary" vertex="1">
+          <mxGeometry height="45" width="75" x="95" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-17" parent="lane_sup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" value="Submit Report to Management" vertex="1">
+          <mxGeometry height="35" width="140" x="20" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-18" edge="1" parent="lane_sup" source="FPqwXVikfXxkkeHYRNzL-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FPqwXVikfXxkkeHYRNzL-17">
+          <mxGeometry relative="1" x="0.1826" as="geometry">
+            <Array as="points">
+              <mxPoint x="47.5" y="1150" />
+              <mxPoint x="80" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-19" edge="1" parent="lane_sup" source="FPqwXVikfXxkkeHYRNzL-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FPqwXVikfXxkkeHYRNzL-17">
+          <mxGeometry relative="1" x="0.1826" as="geometry">
+            <Array as="points">
+              <mxPoint x="132.5" y="1150" />
+              <mxPoint x="100" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lane_m" parent="pool" style="swimlane;html=1;startSize=30;fillColor=#fffdf0;strokeColor=#e6dfa8;fontStyle=1;fontSize=12;" value="Management" vertex="1">
+          <mxGeometry height="1270" width="150" x="800" as="geometry" />
+        </mxCell>
+        <mxCell id="m_start" parent="lane_m" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="Start" vertex="1">
+          <mxGeometry height="35" width="70" x="40" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="m_login" parent="lane_m" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Log in to BEANTRACK" vertex="1">
+          <mxGeometry height="35" width="120" x="15" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="m_review" parent="lane_m" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Review Submitted Operational Reports" vertex="1">
+          <mxGeometry height="40" width="120" x="15" y="1168" as="geometry" />
+        </mxCell>
+        <mxCell id="m_end" parent="lane_m" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="End" vertex="1">
+          <mxGeometry height="30" width="70" x="40" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="pool" source="s_check_thresh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" target="s_flag_alert" value="Yes">
+          <mxGeometry relative="1" x="0.2883" y="3" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="277.5" y="803.8" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-8" edge="1" parent="pool" source="s_check_thresh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="FPqwXVikfXxkkeHYRNzL-7">
+          <mxGeometry relative="1" x="0.002" as="geometry">
+            <Array as="points">
+              <mxPoint x="382.5" y="803.8" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-9" connectable="0" parent="FPqwXVikfXxkkeHYRNzL-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="No" vertex="1">
+          <mxGeometry relative="1" x="0.1009" y="-2" as="geometry">
+            <mxPoint x="2" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-11" connectable="0" parent="FPqwXVikfXxkkeHYRNzL-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;No&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1009" y="-2" as="geometry">
+            <mxPoint x="2" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-12" edge="1" parent="pool" source="s_flag_alert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="i_view">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-13" edge="1" parent="pool" source="FPqwXVikfXxkkeHYRNzL-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="i_view">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-22" edge="1" parent="pool" source="s_gen_excel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="FPqwXVikfXxkkeHYRNzL-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="1122.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FPqwXVikfXxkkeHYRNzL-23" edge="1" parent="pool" source="FPqwXVikfXxkkeHYRNzL-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="m_review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="c_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="c_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c_cust">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="c_cust" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s_tier">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="s_tier" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="c_items">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="240" />
+              <mxPoint x="155" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="c_items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s_calc">
+          <mxGeometry relative="1" x="0.0065" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s_calc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="c_pay">
+          <mxGeometry relative="1" x="0.3878" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="310" />
+              <mxPoint x="155" y="310" />
+              <mxPoint x="155" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="c_pay" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c_submit">
+          <mxGeometry relative="1" x="-0.0667" as="geometry">
+            <Array as="points">
+              <mxPoint x="155" y="400" />
+              <mxPoint x="155" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="c_submit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="s_save">
+          <mxGeometry relative="1" x="0.1714" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="s_save" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="s_dec_type">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="s_audit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="c_receipt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="c_receipt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c_end">
+          <mxGeometry relative="1" x="0.0286" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="650" />
+              <mxPoint x="160" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="sup_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sup_login">
+          <mxGeometry relative="1" x="-0.0667" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="930" />
+              <mxPoint x="740" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="sup_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sup_rep">
+          <mxGeometry relative="1" x="-0.0667" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="980" />
+              <mxPoint x="740" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="sup_rep" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="s_compile_rep">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="s_compile_rep" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="sup_dec_export">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="1050" />
+              <mxPoint x="740" y="1050" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="sup_dec_export" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="s_gen_excel" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="m_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="m_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" edge="1" parent="1" source="m_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="m_review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" edge="1" parent="1" source="m_review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="m_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

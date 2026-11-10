@@ -1,0 +1,93 @@
+flowchart TD
+    %% Swimlane Subgraphs
+    subgraph Cashier_Lane ["Cashier"]
+        C_Start(["Start"]) --> C_Login["Log in to BEANTRACK"]
+        C_Login --> C_Cust["Select Customer Account"]
+        C_Cust --> C_Items["Enter Products & Quantities"]
+        C_Items --> C_Pay["Select Payment Method (Cash, Online, Terms)"]
+        C_Pay --> C_Submit["Submit & Complete Order"]
+        C_Receipt["Print / Issue Receipt"] --> C_End(["End"])
+    end
+
+    subgraph System_Lane ["BEANTRACK System & Database"]
+        S_Tier["Auto-Apply Customer Price Tier (SRP, Wholesale, etc.)"]
+        S_Calc["Validate & Calculate Order Total"]
+        S_Save["Save Sales Order (#ID)"]
+        S_Type{"Item Type?"}
+        S_Direct["Deduct Packaged Stock directly"]
+        S_Recipe["Deduct Raw Ingredients via Recipe BOM (g, ml, pcs)"]
+        S_Audit["Append SHA-256 Hash to Audit Ledger"]
+
+        S_ValDel["Validate P.O. & Increment Branch Stock"]
+        S_ValSp["Record Reason & Deduct Spoiled Stock"]
+        S_CheckStock{"Stock <= Reorder Point?"}
+        S_LowAlert["Flag Orange 'LOW' / Red 'OUT OF STOCK' Alert"]
+        S_Normal["Maintain Normal In-Stock Status"]
+
+        S_Compile["Retrieve Real-Time Sales, Deliveries, Spoilage & Stock"]
+        S_GenRep["Generate Dynamic Multi-Sheet Workbook (.xlsx)"]
+    end
+
+    subgraph Inventory_Lane ["Inventory Staff"]
+        I_Start(["Start"]) --> I_Login["Log in to BEANTRACK"]
+        I_Action{"Operational Task?"}
+        I_Login --> I_Action
+        
+        I_Action -- Inbound Delivery --> I_Del["Receive Supplier Shipment & Enter P.O., Cases, Units"]
+        I_Action -- Spoilage / Damage --> I_Spoil["Identify Damaged/Expired Stock & Enter Reason"]
+        I_Action -- Physical Recount --> I_Adjust["Perform Stock Adjustment"]
+
+        I_View["View Updated Stock on Inventory Dashboard"] --> I_End(["End"])
+    end
+
+    subgraph Supervisor_Lane ["Supervisor"]
+        Sup_Start(["Start"]) --> Sup_Login["Log in to BEANTRACK"]
+        Sup_Login --> Sup_Menu["Configure Menu Drink Recipes & Customer Tiers"]
+        Sup_Menu --> Sup_Rep["Access Reports Module & Select Date Range"]
+        Sup_Export{"Export Report?"}
+        Sup_Download["Download 8-Sheet Client Excel / CSV (.xlsx)"]
+        Sup_Onscreen["Review On-Screen Analytics Summary"]
+        Sup_Submit["Submit Report to Management"]
+    end
+
+    subgraph Management_Lane ["Management"]
+        M_Start(["Start"]) --> M_Login["Log in to BEANTRACK"]
+        M_Login --> M_Dash["Review Dashboard KPIs & Sales Summaries"]
+        M_Dash --> M_Review["Inspect Submitted Multi-Sheet Reports"] --> M_End(["End"])
+    end
+
+    %% Inter-Lane Connections (Sales Flow)
+    C_Cust --> S_Tier
+    S_Tier --> C_Items
+    C_Items --> S_Calc
+    S_Calc --> C_Pay
+    C_Submit --> S_Save
+    S_Save --> S_Type
+    S_Type -- Packaged Item --> S_Direct
+    S_Type -- Prepared Drink --> S_Recipe
+    S_Direct --> S_Audit
+    S_Recipe --> S_Audit
+    S_Audit --> C_Receipt
+
+    %% Inter-Lane Connections (Inventory Flow)
+    I_Del --> S_ValDel
+    I_Spoil --> S_ValSp
+    I_Adjust --> S_ValSp
+    S_ValDel --> S_CheckStock
+    S_ValSp --> S_CheckStock
+    S_Direct --> S_CheckStock
+    S_Recipe --> S_CheckStock
+    S_CheckStock -- Yes --> S_LowAlert
+    S_CheckStock -- No --> S_Normal
+    S_LowAlert --> I_View
+    S_Normal --> I_View
+
+    %% Inter-Lane Connections (Supervisor & Management Flow)
+    Sup_Rep --> S_Compile
+    S_Compile --> Sup_Export
+    Sup_Export -- Yes --> S_GenRep
+    S_GenRep --> Sup_Download
+    Sup_Download --> Sup_Submit
+    Sup_Export -- No --> Sup_Onscreen
+    Sup_Onscreen --> Sup_Submit
+    Sup_Submit --> M_Review

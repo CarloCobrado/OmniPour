@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>OmniPour.WinForms</AssemblyName>
+    <RootNamespace>OmniPour.WinForms</RootNamespace>
+    <Product>OmniPour Beverage POS &amp; Inventory Suite</Product>
+    <Company>OmniPour Systems</Company>
+    <AssemblyTitle>OmniPour Suite</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
+  </ItemGroup>
+
+</Project>

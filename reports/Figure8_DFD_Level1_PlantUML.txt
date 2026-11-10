@@ -1,0 +1,98 @@
+@startuml
+skinparam roundcorner 10
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+
+skinparam rectangle {
+    BackgroundColor #fff2cc
+    BorderColor #d6b656
+    BorderThickness 1.5
+    FontColor #000000
+    FontStyle bold
+}
+
+skinparam component {
+    BackgroundColor #f8cecc
+    BorderColor #b85450
+    BorderThickness 1.5
+    FontColor #000000
+}
+
+skinparam database {
+    BackgroundColor #dae8fc
+    BorderColor #6c8ebf
+    BorderThickness 1.5
+    FontColor #000000
+}
+
+' External Entities
+rectangle "System Administrator" as Admin
+rectangle "Cashier" as Cashier
+rectangle "Customer" as Customer
+rectangle "Supervisor" as Supervisor
+rectangle "Stock Staff / Inventory" as Inventory
+rectangle "Management" as Management
+
+' Processes
+component "1.0\nUser Authentication & Access Management" as P1
+component "2.0\nCustomer & Price Tier Management" as P2
+component "3.0\nPOS Sales & Order Processing" as P3
+component "4.0\nAutomatic Stock Updating & Recipe Deduction" as P4
+component "5.0\nInventory, Delivery & Spoilage Management" as P5
+component "6.0\nReporting & Dashboard Management" as P6
+component "7.0\nBlockchain-Backed Audit Trail & Verification" as P7
+component "8.0\nDatabase Backup & Disaster Recovery" as P8
+
+' Data Stores
+database "D1: Users & Roles" as D1
+database "D2: Customers" as D2
+database "D3: Sales Transactions" as D3
+database "D4: Products & Recipes" as D4
+database "D5: Branch Inventory" as D5
+database "D6: Deliveries & Spoilage" as D6
+database "D7: Audit Trail & Hash State" as D7
+
+' Admin Flows
+Admin --> P1 : Credentials & accounts
+P1 --> Admin : Status & session tokens
+P1 --> D1 : Read / Write credentials
+Admin --> P8 : Backup & restore command
+P8 --> Admin : Downloadable SQL archive
+
+' Customer & Cashier Flows
+Cashier --> P2 : Customer lookup query
+P2 --> D2 : Store customer & tier
+D2 --> P3 : Customer pricing tier
+Cashier --> P3 : Order items & tender
+P3 --> Cashier : Item price & stock confirmation
+Customer --> P3 : Payment tender
+P3 --> Customer : Printed sales receipt
+P3 --> D3 : Record completed sale
+P3 --> P4 : Sold products & quantities
+
+' Stock & Recipe Deductions
+P4 --> D4 : Query BOM recipe & packaged type
+P4 --> D5 : Deduct stock / raw ingredients
+
+' Inventory & Spoilage Flows
+Inventory --> P5 : Inbound shipment (P.O.) & spoilage log
+P5 --> Inventory : Low-stock alert & receiving receipt
+P5 --> D5 : Increment stock / Deduct damage
+P5 --> D6 : Log delivery & spoilage details
+
+' Reporting Flows
+D3 --> P6 : Historical sales data
+D5 --> P6 : Current stock balances
+D6 --> P6 : Deliveries & spoilage data
+Management --> P6 : Report filter criteria
+P6 --> Management : Executive dashboard & 8-sheet Excel
+
+' Audit & Supervisor Flows
+Supervisor --> P7 : Audit query & checkpoint verify
+P7 --> Supervisor : Chain status & audit records
+Supervisor --> D4 : Menu recipes & BOM setup
+P7 --> D7 : Append SHA-256 block hash
+P3 ..> P7 : Transaction event
+P5 ..> P7 : Stock adjustment event
+
+@enduml

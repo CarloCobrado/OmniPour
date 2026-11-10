@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 750" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Times New Roman', Times, serif;">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <style>
+    .entity-box { fill: #ffffff; stroke: #000000; stroke-width: 1.6; }
+    .process-box { fill: #ffffff; stroke: #000000; stroke-width: 1.8; }
+    .divider { stroke: #000000; stroke-width: 1.8; }
+    .arrow-line { stroke: #000000; stroke-width: 1.5; fill: none; }
+    .entity-title { font-size: 19px; font-weight: bold; fill: #000000; text-anchor: middle; dominant-baseline: middle; }
+    .process-num { font-size: 24px; font-weight: bold; fill: #000000; text-anchor: middle; dominant-baseline: middle; }
+    .process-title { font-size: 21px; font-weight: bold; fill: #000000; text-anchor: middle; }
+    .flow-label { font-size: 13.5px; fill: #000000; text-anchor: middle; dominant-baseline: middle; }
+  </style>
+
+  <!-- ==================== CENTRAL PROCESS 0 ==================== -->
+  <rect class="process-box" x="440" y="260" width="270" height="210" />
+  <line class="divider" x1="440" y1="305" x2="710" y2="305" />
+  <text class="process-num" x="575" y="285">0</text>
+  <text class="process-title" x="575" y="345">BeanTrack</text>
+  <text class="process-title" x="575" y="375">Coffee Shop</text>
+  <text class="process-title" x="575" y="405">POS &amp; Inventory</text>
+  <text class="process-title" x="575" y="435">System</text>
+
+  <!-- ==================== TOP: MANAGEMENT ==================== -->
+  <rect class="entity-box" x="465" y="30" width="220" height="75" />
+  <text class="entity-title" x="575" y="68">Management</text>
+
+  <!-- Management -> System (Filters/queries) -->
+  <line class="arrow-line" x1="535" y1="105" x2="535" y2="260" marker-end="url(#arrow)" />
+  <rect x="420" y="170" width="110" height="18" fill="#ffffff" />
+  <text class="flow-label" x="475" y="179">Report criteria</text>
+
+  <!-- System -> Management (Reports/Analytics) -->
+  <line class="arrow-line" x1="615" y1="260" x2="615" y2="105" marker-end="url(#arrow)" />
+  <rect x="620" y="170" width="125" height="18" fill="#ffffff" />
+  <text class="flow-label" x="682" y="179">Sales &amp; inv. reports</text>
+
+  <!-- ==================== BOTTOM: SYSTEM ADMINISTRATOR ==================== -->
+  <rect class="entity-box" x="465" y="625" width="220" height="75" />
+  <text class="entity-title" x="575" y="653">System</text>
+  <text class="entity-title" x="575" y="677">Administrator</text>
+
+  <!-- Admin -> System (User data) -->
+  <line class="arrow-line" x1="535" y1="625" x2="535" y2="470" marker-end="url(#arrow)" />
+  <rect x="415" y="535" width="115" height="18" fill="#ffffff" />
+  <text class="flow-label" x="472" y="544">User accounts data</text>
+
+  <!-- System -> Admin (System logs / User status) -->
+  <line class="arrow-line" x1="615" y1="470" x2="615" y2="625" marker-end="url(#arrow)" />
+  <rect x="620" y="535" width="125" height="18" fill="#ffffff" />
+  <text class="flow-label" x="682" y="544">System &amp; user status</text>
+
+  <!-- ==================== TOP-LEFT: CASHIER ==================== -->
+  <rect class="entity-box" x="40" y="130" width="180" height="85" />
+  <text class="entity-title" x="130" y="173">Cashier</text>
+
+  <!-- Cashier -> System (Orders/Payments) -->
+  <path class="arrow-line" d="M 220 155 L 340 155 L 440 290" marker-end="url(#arrow)" />
+  <rect x="235" y="140" width="150" height="18" fill="#ffffff" />
+  <text class="flow-label" x="310" y="149">Order &amp; payment info</text>
+
+  <!-- System -> Cashier (Receipt/Verification) -->
+  <path class="arrow-line" d="M 440 320 L 330 200 L 220 200" marker-end="url(#arrow)" />
+  <rect x="225" y="205" width="155" height="18" fill="#ffffff" />
+  <text class="flow-label" x="302" y="214">Receipt &amp; item lookup</text>
+
+  <!-- ==================== BOTTOM-LEFT: STOCK STAFF ==================== -->
+  <rect class="entity-box" x="40" y="490" width="180" height="85" />
+  <text class="entity-title" x="130" y="523">Stock Staff /</text>
+  <text class="entity-title" x="130" y="547">Inventory</text>
+
+  <!-- Stock Staff -> System (Stock counts/Receiving) -->
+  <path class="arrow-line" d="M 220 515 L 330 515 L 440 420" marker-end="url(#arrow)" />
+  <rect x="220" y="480" width="160" height="18" fill="#ffffff" />
+  <text class="flow-label" x="300" y="489">Stock intake &amp; recipes</text>
+
+  <!-- System -> Stock Staff (Low stock alerts) -->
+  <path class="arrow-line" d="M 440 450 L 340 560 L 220 560" marker-end="url(#arrow)" />
+  <rect x="225" y="565" width="155" height="18" fill="#ffffff" />
+  <text class="flow-label" x="302" y="574">Low-stock alerts &amp; levels</text>
+
+  <!-- ==================== TOP-RIGHT: CUSTOMER ==================== -->
+  <rect class="entity-box" x="930" y="130" width="180" height="85" />
+  <text class="entity-title" x="1020" y="173">Customer</text>
+
+  <!-- Customer -> System (Order requests) -->
+  <path class="arrow-line" d="M 930 155 L 810 155 L 710 290" marker-end="url(#arrow)" />
+  <rect x="765" y="140" width="150" height="18" fill="#ffffff" />
+  <text class="flow-label" x="840" y="149">Order details &amp; cash</text>
+
+  <!-- System -> Customer (Receipt) -->
+  <path class="arrow-line" d="M 710 320 L 820 200 L 930 200" marker-end="url(#arrow)" />
+  <rect x="770" y="205" width="150" height="18" fill="#ffffff" />
+  <text class="flow-label" x="845" y="214">Sales receipt</text>
+
+  <!-- ==================== BOTTOM-RIGHT: SUPERVISOR ==================== -->
+  <rect class="entity-box" x="930" y="490" width="180" height="85" />
+  <text class="entity-title" x="1020" y="533">Supervisor</text>
+
+  <!-- Supervisor -> System (Verification/Audit queries) -->
+  <path class="arrow-line" d="M 930 515 L 820 515 L 710 420" marker-end="url(#arrow)" />
+  <rect x="770" y="480" width="160" height="18" fill="#ffffff" />
+  <text class="flow-label" x="850" y="489">Audit &amp; chain verify query</text>
+
+  <!-- System -> Supervisor (Audit log & Chain status) -->
+  <path class="arrow-line" d="M 710 450 L 810 560 L 930 560" marker-end="url(#arrow)" />
+  <rect x="770" y="565" width="160" height="18" fill="#ffffff" />
+  <text class="flow-label" x="850" y="574">Audit trail &amp; integrity status</text>
+
+</svg>

@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" modified="2026-11-08T00:15:00.000Z" agent="BeanTrack" version="22.0.0" type="device">
+  <diagram id="Figure3_1_SystemArchitecture" name="System Architecture">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ================= CLIENT LAYER ================= -->
+        <mxCell id="layer_client" value="CLIENT LAYER (User Roles &amp; Devices — Standard Web Browsers: Chrome, Edge)" style="swimlane;html=1;startSize=28;fillColor=#fffdf0;strokeColor=#e6dfa8;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#000000;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1100" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Cashier Device -->
+        <mxCell id="c_cashier" value="&lt;b&gt;Cashier&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;POS Terminal&lt;br/&gt;• Customer Order Entry&lt;br/&gt;• Dynamic Price Tiers&lt;br/&gt;• Payment Tender&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="layer_client">
+          <mxGeometry x="20" y="40" width="195" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Inventory Staff Device -->
+        <mxCell id="c_inv" value="&lt;b&gt;Inventory Staff&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;Warehouse Workstation&lt;br/&gt;• Inbound Deliveries (P.O.)&lt;br/&gt;• Spoilage &amp; Wastage Logs&lt;br/&gt;• Raw Ingredients &amp; Alerts&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="layer_client">
+          <mxGeometry x="240" y="40" width="195" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Supervisor Device -->
+        <mxCell id="c_sup" value="&lt;b&gt;Supervisor&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;Operations PC&lt;br/&gt;• Menu Recipe BOM Setup&lt;br/&gt;• Customer Pricing Setup&lt;br/&gt;• Multi-Sheet Report Gen&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="layer_client">
+          <mxGeometry x="460" y="40" width="195" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Management Device -->
+        <mxCell id="c_mgmt" value="&lt;b&gt;Management&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;Executive Laptop / Tablet&lt;br/&gt;• Live Sales &amp; Stock KPIs&lt;br/&gt;• Operational Review&lt;br/&gt;• Strategic Planning&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="layer_client">
+          <mxGeometry x="680" y="40" width="195" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Administrator Device -->
+        <mxCell id="c_admin" value="&lt;b&gt;System Administrator&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;Admin Console&lt;br/&gt;• User Accounts &amp; Access&lt;br/&gt;• Database Backup (.sql)&lt;br/&gt;• Disaster Recovery&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="layer_client">
+          <mxGeometry x="900" y="40" width="180" height="80" as="geometry" />
+        </mxCell>
+
+
+        <!-- ================= TIER 1: PRESENTATION LAYER ================= -->
+        <mxCell id="layer_pres" value="TIER 1: PRESENTATION LAYER (Web Server &amp; Frontend User Interface)" style="swimlane;html=1;startSize=28;fillColor=#f2faf4;strokeColor=#a8dab5;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#000000;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="1100" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Apache Web Server -->
+        <mxCell id="p_apache" value="&lt;b&gt;Apache Web Server (XAMPP)&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• HTTP/HTTPS Request Handling&lt;br/&gt;• Virtual Hosts &amp; Rewrite Engine&lt;br/&gt;• Static Assets (.css, .js, images)&lt;br/&gt;• PHP 8 Module Handler&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;" vertex="1" parent="layer_pres">
+          <mxGeometry x="25" y="40" width="315" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Dynamic UI Views -->
+        <mxCell id="p_views" value="&lt;b&gt;HTML5 Responsive Interface&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Semantic Layouts &amp; Navigation Menus&lt;br/&gt;• CSS3 Modern Responsive Styling&lt;br/&gt;• Role-Tailored Dashboards&lt;br/&gt;  (Inventory View vs. Sales View Switcher)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;" vertex="1" parent="layer_pres">
+          <mxGeometry x="370" y="40" width="350" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- JavaScript Interactivity -->
+        <mxCell id="p_js" value="&lt;b&gt;Client Interactivity (JavaScript)&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Real-Time Order Totals Calculation&lt;br/&gt;• Asynchronous Search &amp; Filter Lookups&lt;br/&gt;• Interactive Modal Adjustment Dialogs&lt;br/&gt;• Live UI Alert Badges (LOW, OUT)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;" vertex="1" parent="layer_pres">
+          <mxGeometry x="750" y="40" width="325" height="80" as="geometry" />
+        </mxCell>
+
+
+        <!-- ================= TIER 2: APPLICATION LOGIC LAYER ================= -->
+        <mxCell id="layer_logic" value="TIER 2: APPLICATION / BUSINESS LOGIC LAYER (PHP Application Engine)" style="swimlane;html=1;startSize=28;fillColor=#fff5f5;strokeColor=#e0a899;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#000000;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="430" width="1100" height="340" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1 Engines -->
+        <!-- Auth Engine -->
+        <mxCell id="eng_auth" value="&lt;b&gt;Authentication &amp;amp; Access (RBAC)&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Password Hashing &amp; Verification&lt;br/&gt;• Role Enforcement (5 Roles)&lt;br/&gt;• Session Cookie Security&lt;br/&gt;• Access Control Privileges&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="20" y="40" width="245" height="125" as="geometry" />
+        </mxCell>
+
+        <!-- POS & 5-Tier Pricing -->
+        <mxCell id="eng_pos" value="&lt;b&gt;POS &amp;amp; 5-Tier Pricing Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Tier Assignment (SRP, Wholesale,&lt;br/&gt;  Bulk, Dealer, Reseller)&lt;br/&gt;• Line-Item Subtotal Computation&lt;br/&gt;• Multi-Payment Tender Processing&lt;br/&gt;• 25-Order Server-Side Pagination&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="285" y="40" width="255" height="125" as="geometry" />
+        </mxCell>
+
+        <!-- Recipe BOM Engine -->
+        <mxCell id="eng_bom" value="&lt;b&gt;Recipe BOM Deduction Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Item Classification (Packaged vs. Drink)&lt;br/&gt;• Bill of Materials (BOM) Resolution&lt;br/&gt;• Automatic Raw Ingredient Deduction&lt;br/&gt;  (g coffee beans, ml syrups/milk)&lt;br/&gt;• Multi-Branch Stock Tracking&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="560" y="40" width="265" height="125" as="geometry" />
+        </mxCell>
+
+        <!-- Delivery & Spoilage Engine -->
+        <mxCell id="eng_inv" value="&lt;b&gt;Delivery &amp;amp; Spoilage Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Inbound Shipment (P.O.) Verification&lt;br/&gt;• Case-to-Unit Automatic Conversion&lt;br/&gt;• Spoilage Write-Off with Mandatory Cause&lt;br/&gt;• Reorder Threshold Evaluation&lt;br/&gt;  (Orange LOW / Red OUT Alerts)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="845" y="40" width="235" height="125" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2 Engines -->
+        <!-- Reporting Engine -->
+        <mxCell id="eng_rep" value="&lt;b&gt;Reporting &amp;amp; Analytics Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Multi-Sheet Excel Workbook Exporting (.xlsx)&lt;br/&gt;  (Sale, Arrival, Transfer, Return, Exp &amp; Dmg, Daily, Details)&lt;br/&gt;• Client Official 19-Column CSV Formatter&lt;br/&gt;• Executive Dashboard KPI Aggregation&lt;br/&gt;• Multi-Criteria Date &amp; Branch Filtering&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="20" y="185" width="340" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain Audit Engine -->
+        <mxCell id="eng_audit" value="&lt;b&gt;Blockchain Audit Trail &amp;amp; Verification Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• SHA-256 Sequential Cryptographic Hash Chaining&lt;br/&gt;• Tamper-Evident Ledger Recording Across All Processes&lt;br/&gt;• Downloadable Audit Checkpoint Snapshot Exporter (.json)&lt;br/&gt;• Mathematical Chain Traversal &amp; Checkpoint Comparison&lt;br/&gt;  (Detects Inserted, Modified, or Deleted Records)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="380" y="185" width="345" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Backup & Recovery Engine -->
+        <mxCell id="eng_backup" value="&lt;b&gt;Database Backup &amp;amp; Recovery Engine&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• Full Database Schema &amp; Data SQL Backup Exporter&lt;br/&gt;• Timestamped Snapshot Archiving (Process 7.0)&lt;br/&gt;• Interactive Disaster Recovery Table Restoration&lt;br/&gt;• Table Relationship &amp; Constraint Preservation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;" vertex="1" parent="layer_logic">
+          <mxGeometry x="745" y="185" width="335" height="135" as="geometry" />
+        </mxCell>
+
+
+        <!-- ================= TIER 3: DATA STORAGE LAYER ================= -->
+        <mxCell id="layer_data" value="TIER 3: DATA STORAGE LAYER (Database &amp; File System Storage)" style="swimlane;html=1;startSize=28;fillColor=#f0f7ff;strokeColor=#a9c4eb;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#000000;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="830" width="1100" height="220" as="geometry" />
+        </mxCell>
+
+        <!-- MySQL Database -->
+        <mxCell id="db_mysql" value="&lt;b&gt;MySQL Relational Database Engine (InnoDB)&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• &lt;b&gt;Users &amp; Roles:&lt;/b&gt; users, roles, customers, branches&lt;br/&gt;• &lt;b&gt;Transactions:&lt;/b&gt; transactions, transaction_items&lt;br/&gt;• &lt;b&gt;Catalog &amp; Recipes:&lt;/b&gt; products (5-tier prices), product_recipe_items, ingredients&lt;br/&gt;• &lt;b&gt;Inventory Operations:&lt;/b&gt; supplier_deliveries (P.O.), inventory_spoilage, stock_movements&lt;br/&gt;• &lt;b&gt;Cryptographic Ledger:&lt;/b&gt; audit_trail, audit_chain_state (SHA-256 Hash Head)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=15;" vertex="1" parent="layer_data">
+          <mxGeometry x="30" y="45" width="690" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- File Storage -->
+        <mxCell id="db_files" value="&lt;b&gt;Local Secure File System Storage&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:10px;&quot;&gt;• &lt;b&gt;SQL Database Backups:&lt;/b&gt;&lt;br/&gt;  beantrack_backup_YYYY-MM-DD.sql archives&lt;br/&gt;• &lt;b&gt;Audit Checkpoint Snapshots:&lt;/b&gt;&lt;br/&gt;  Immutable JSON hash state files&lt;br/&gt;• &lt;b&gt;Operational Reports:&lt;/b&gt;&lt;br/&gt;  Multi-Sheet Excel (.xlsx) &amp; CSV Exports&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=left;spacingLeft=15;" vertex="1" parent="layer_data">
+          <mxGeometry x="750" y="45" width="320" height="150" as="geometry" />
+        </mxCell>
+
+
+        <!-- ================= INTER-LAYER DATA FLOW CONNECTORS ================= -->
+
+        <!-- Client to Presentation -->
+        <mxCell id="flow_c_p" value="HTTP / HTTPS Requests (Port 80/443)  |  Encrypted TLS / Secure Session Cookies" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;endArrow=classic;startArrow=classic;strokeWidth=1.5;" edge="1" source="layer_client" target="layer_pres" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Presentation to Logic -->
+        <mxCell id="flow_p_l" value="PHP 8 FastCGI / Server Module Processing  |  Server-Side Controller Routing &amp; Session Management" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;endArrow=classic;startArrow=classic;strokeWidth=1.5;" edge="1" source="layer_pres" target="layer_logic" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Logic to Data -->
+        <mxCell id="flow_l_d" value="PDO Prepared Statements &amp; Parameterized SQL Queries  |  Relational Result Sets, .sql Backup &amp; .json Snapshot File I/O" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;endArrow=classic;startArrow=classic;strokeWidth=1.5;" edge="1" source="layer_logic" target="layer_data" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,313 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="System Architecture" id="-G4mM2eUUgAZMRCYc0ij">
+    <mxGraphModel dx="895" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-19" parent="1" style="swimlane;html=1;startSize=28;fillColor=#f0f7ff;strokeColor=#a9c4eb;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#000000;collapsible=0;" value="TIER 3: DATA STORAGE LAYER (Database &amp; File System Storage)" vertex="1">
+          <mxGeometry height="220" width="1100" x="50" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="System&#xa;Administrator" vertex="1">
+          <mxGeometry height="50" width="160" x="180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="Cashier" vertex="1">
+          <mxGeometry height="50" width="150" x="490" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="Customer" vertex="1">
+          <mxGeometry height="50" width="150" x="770" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="Supervisor" vertex="1">
+          <mxGeometry height="50" width="160" x="1440" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="Stock Staff /&#xa;Inventory" vertex="1">
+          <mxGeometry height="50" width="160" x="1310" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;" value="Management" vertex="1">
+          <mxGeometry height="50" width="160" x="540" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;1.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;User Authentication &amp;amp;&lt;br/&gt;Access Management" vertex="1">
+          <mxGeometry height="65" width="180" x="170" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;8.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Database Backup &amp;amp;&lt;br/&gt;Disaster Recovery" vertex="1">
+          <mxGeometry height="65" width="180" x="170" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;2.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Customer &amp;amp; Price Tier&lt;br/&gt;Management" vertex="1">
+          <mxGeometry height="65" width="180" x="380" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;3.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;POS Sales &amp;amp; Order&lt;br/&gt;Processing" vertex="1">
+          <mxGeometry height="65" width="190" x="630" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;4.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Automatic Stock Updating&lt;br/&gt;&amp;amp; Recipe Deduction" vertex="1">
+          <mxGeometry height="65" width="210" x="950" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;7.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Blockchain-Backed Audit&lt;br/&gt;Trail &amp;amp; Verification" vertex="1">
+          <mxGeometry height="65" width="220" x="1290" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;5.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Inventory, Delivery &amp;amp;&lt;br/&gt;Spoilage Management" vertex="1">
+          <mxGeometry height="70" width="210" x="950" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;" value="&lt;b&gt;6.0&lt;/b&gt;&lt;hr style=&quot;margin:2px 0;&quot;/&gt;Reporting &amp;amp; Dashboard&lt;br/&gt;Management" vertex="1">
+          <mxGeometry height="70" width="200" x="625" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-39" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D1: Users &amp;amp; Roles" vertex="1">
+          <mxGeometry height="40" width="180" x="170" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-40" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D2: Customers" vertex="1">
+          <mxGeometry height="40" width="180" x="380" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-41" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D3: Sales Transactions" vertex="1">
+          <mxGeometry height="40" width="190" x="630" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-42" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D4: Products &amp;amp; Recipes" vertex="1">
+          <mxGeometry height="40" width="210" x="1000" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-43" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D5: Branch Inventory" vertex="1">
+          <mxGeometry height="40" width="210" x="950" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-44" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D6: Deliveries &amp;amp; Spoilage" vertex="1">
+          <mxGeometry height="40" width="210" x="950" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-45" parent="1" style="shape=partialRectangle;right=0;left=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#000000;whiteSpace=wrap;align=center;" value="D7: Audit Trail &amp;amp; Hash State" vertex="1">
+          <mxGeometry height="40" width="220" x="1290" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-46" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-31" value="Credentials &amp; accounts">
+          <mxGeometry relative="1" x="-0.4286" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="230" y="120" />
+              <mxPoint x="230" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-47" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-25" value="Status &amp; session tokens">
+          <mxGeometry relative="1" x="-0.4286" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="310" y="120" />
+              <mxPoint x="310" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-48" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-39" value="Read / Write credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-49" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-32" value="Backup &amp; restore command">
+          <mxGeometry relative="1" x="-0.496" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="160" y="65" />
+              <mxPoint x="160" y="412" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-50" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-25" value="Downloadable SQL archive">
+          <mxGeometry relative="1" x="-0.4286" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="100" y="430" />
+              <mxPoint x="100" y="55" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-51" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-33" value="Customer lookup query">
+          <mxGeometry relative="1" x="0.6667" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="520" y="125" />
+              <mxPoint x="470" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-52" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-40" value="Store customer &amp; tier">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-53" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-34" value="Customer pricing tier">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="295" />
+              <mxPoint x="590" y="192.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-54" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-34" value="Order items &amp; tender info">
+          <mxGeometry relative="1" x="0.6923" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="590" y="125" />
+              <mxPoint x="650" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-55" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="T5kUf_oFBPqy8ReLJrMX-26" value="Item price &amp; stock confirmation">
+          <mxGeometry relative="1" x="-0.2258" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="700" y="65" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-56" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-34" value="Payment tender (Cash/Online)">
+          <mxGeometry relative="1" x="-0.1667" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="790" y="120" />
+              <mxPoint x="740" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-57" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-27" value="Printed sales receipt">
+          <mxGeometry relative="1" x="0.7333" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="780" y="140" />
+              <mxPoint x="860" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-58" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-41" value="Record completed sale">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-59" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-35" value="Sold products &amp; quantities">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-60" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-42" value="Query BOM recipe &amp; packaged type">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1105" y="240" />
+              <mxPoint x="1105" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-61" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-43" value="Deduct stock / raw ingredients">
+          <mxGeometry relative="1" x="0.5556" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="980" y="300" />
+              <mxPoint x="980" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-62" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-37" value="Inbound shipment (P.O.) &amp; spoilage log">
+          <mxGeometry relative="1" x="-0.234" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1120" y="575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-63" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-29" value="Low-stock alert &amp; receiving receipt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="590" />
+              <mxPoint x="1340" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-64" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-43" value="Increment stock / Deduct damage">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="480" />
+              <mxPoint x="1070" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-65" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-44" value="Log delivery &amp; spoilage details">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="570" />
+              <mxPoint x="990" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-66" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-38" value="Historical sales data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="420" />
+              <mxPoint x="690" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-67" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="T5kUf_oFBPqy8ReLJrMX-38" value="Current stock balances">
+          <mxGeometry relative="1" x="0.125" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="880" y="380" />
+              <mxPoint x="880" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-68" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-38" value="Deliveries &amp; spoilage data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-69" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;exitX=0.184;exitY=0.014;exitDx=0;exitDy=0;exitPerimeter=0;" target="T5kUf_oFBPqy8ReLJrMX-38" value="Report filter criteria">
+          <mxGeometry relative="1" x="-0.1098" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="569.4" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-70" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="T5kUf_oFBPqy8ReLJrMX-30" value="Executive dashboard &amp; 8-sheet Excel">
+          <mxGeometry relative="1" x="-0.1412" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="490" />
+              <mxPoint x="660" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-71" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-36" value="Audit query &amp; checkpoint verify">
+          <mxGeometry relative="1" x="0.75" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1480" y="125" />
+              <mxPoint x="1390" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-72" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-28" value="Chain status &amp; audit records">
+          <mxGeometry relative="1" x="0.5385" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1480" y="140" />
+              <mxPoint x="1540" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-73" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-42" value="Menu recipes &amp; BOM setup">
+          <mxGeometry relative="1" x="-0.01" as="geometry">
+            <Array as="points">
+              <mxPoint x="1610" y="65" />
+              <mxPoint x="1610" y="330" />
+              <mxPoint x="1105" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-74" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-45" value="Append SHA-256 block hash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-75" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontSize=9;fontColor=#555555;strokeColor=#777777;labelBackgroundColor=#ffffff;" target="T5kUf_oFBPqy8ReLJrMX-36" value="Transaction event">
+          <mxGeometry relative="1" x="-0.1519" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="170" />
+              <mxPoint x="890" y="140" />
+              <mxPoint x="1310" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T5kUf_oFBPqy8ReLJrMX-76" edge="1" parent="1" source="T5kUf_oFBPqy8ReLJrMX-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontSize=9;fontColor=#555555;strokeColor=#777777;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="T5kUf_oFBPqy8ReLJrMX-36" value="Inventory adjustment event">
+          <mxGeometry relative="1" x="-0.1566" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1260" y="495" />
+              <mxPoint x="1260" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

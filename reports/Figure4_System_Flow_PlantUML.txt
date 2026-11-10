@@ -1,0 +1,109 @@
+@startuml
+skinparam style strictuml
+skinparam swimlaneWidth 180
+skinparam swimlaneTitleFontSize 14
+skinparam defaultFontSize 11
+skinparam defaultTextAlignment center
+
+|#F8CECC|Cashier|
+|#F5F5F5|BEANTRACK System & Database|
+|#DAE8FC|Inventory Staff|
+|#D5E8D4|Supervisor|
+|#FFF2CC|Management|
+
+|Cashier|
+start
+:Log in;
+:Select Customer Account;
+
+|BEANTRACK System & Database|
+:Auto-Apply Customer Price Tier
+(SRP, Wholesale, Bulk, Dealer, Reseller);
+
+|Cashier|
+:Enter Products & Quantities;
+
+|BEANTRACK System & Database|
+:Validate & Calculate Order Total;
+
+|Cashier|
+:Select Payment Method
+(Cash, Online, Terms);
+:Submit & Complete Order;
+
+|BEANTRACK System & Database|
+:Save Sales Order Record;
+if (Item Type?) then (Packaged Product)
+  :Deduct Finished Goods Stock directly;
+else (Recipe Beverage)
+  :Retrieve Recipe BOM & Deduct
+Raw Ingredients (g, ml, pcs);
+endif
+:Append SHA-256 Hash to Audit Ledger;
+
+|Cashier|
+:Print / Issue Order Receipt;
+stop
+
+|Inventory Staff|
+start
+:Log in;
+if (Operational Task?) then (Inbound Delivery)
+  :Receive Supplier Shipment
+& Enter P.O., Cases, Units;
+  |BEANTRACK System & Database|
+  :Validate P.O. & Increment
+Branch Inventory Stock;
+else (Spoilage / Damage)
+  |Inventory Staff|
+  :Identify Damaged/Expired Stock
+& Enter Mandatory Reason;
+  |BEANTRACK System & Database|
+  :Record Reason & Deduct
+Spoiled Stock from Inventory;
+endif
+
+|BEANTRACK System & Database|
+if (Stock <= Reorder Point?) then (Yes)
+  :Flag Orange 'LOW' or
+Red 'OUT OF STOCK' Alert;
+else (No)
+  :Maintain In-Stock Status;
+endif
+
+|Inventory Staff|
+:View Updated Stock on Dashboard;
+stop
+
+|Supervisor|
+start
+:Log in;
+:Configure Menu Drink Recipes
+& Customer Pricing Tiers;
+:Access Reporting Module
+& Select Date Range;
+
+|BEANTRACK System & Database|
+:Retrieve Real-Time Sales, Deliveries,
+Spoilage & Inventory Data;
+
+|Supervisor|
+if (Export Report?) then (Yes)
+  |BEANTRACK System & Database|
+  :Generate Verified Multi-Sheet
+Client Excel Workbook (.xlsx);
+  |Supervisor|
+  :Download Client Report;
+else (No)
+  :Review On-Screen Summary;
+endif
+:Submit Report to Management;
+
+|Management|
+start
+:Log in;
+:Review Executive Dashboard
+& Operational KPIs;
+:Inspect Submitted Reports;
+stop
+@enduml

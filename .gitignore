@@ -1,0 +1,16 @@
+# Build and temporary artifacts
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.bak
+
+# Logs
+logs/
+*.log
+
+# Sensitive environment configs
+*.local
